@@ -1,9 +1,11 @@
-// give the user a nice default project!
-lazy val root = (project in file(".")).
-  settings(
-    inThisBuild(List(
-      organization := "com.example",
-      scalaVersion := "2.11.8"
-    )),
-    name := "scala-seed.g8"
+import Dependencies._
+
+lazy val root = (project in file(".")).settings(
+  Defaults.coreDefaultSettings ++ Seq(
+    name         := "$name$",
+    organization := "$organization$",
+    version      := "$version$",
+    scalaVersion := "$scala_version$",
+    libraryDependencies ++= Seq()
   )
+)
